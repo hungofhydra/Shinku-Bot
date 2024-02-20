@@ -1,4 +1,4 @@
-from YGOTools import PriceFinder, CardSearcher, CardPrice, CardInfo
+from YGOTools import BigwebPriceFinder, CardSearcher
 from discord import Embed, Color
 from .CardPaginator import CardPaginator
 
@@ -17,11 +17,11 @@ class CardPriceFinder:
 		return format(vnd, ",") + " VND"
 	
 	
-	def getValue(self, cardPrice: CardPrice) -> str:
+	def getValue(self, cardPrice) -> str:
 		return f"{cardPrice.price} YEN\n{self.yenToVND(cardPrice.price)}\nCondition: {cardPrice.condition}\n[Image]({cardPrice.imageUrl})"
 	
 	
-	def getName(self, cardPrice: CardPrice) -> str:
+	def getName(self, cardPrice) -> str:
 		return f"{cardPrice.printCode} ({cardPrice.rarity})"
 	
 	
@@ -33,7 +33,7 @@ class CardPriceFinder:
 		return embed
 	
 	
-	def createEmbeds(self, title: str, cardPriceList: list[CardPrice], imageUrl: str = None) -> list[Embed]:
+	def createEmbeds(self, title: str, cardPriceList: list[], imageUrl: str = None) -> list[Embed]:
 		embeds = []
 		embed = self.createBaseEmbed(title=title, imageUrl=imageUrl)
 		
