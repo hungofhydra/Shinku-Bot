@@ -169,6 +169,7 @@ namespace Format
 	
 	std::string getAuxDir(const std::string& destinationPoint)
 	{
+		console.log(std::getenv("AUX_DIR"));
 		if (const char* auxDir = std::getenv("AUX_DIR"))
 		{
 			return std::string(auxDir) + "/" + destinationPoint;
