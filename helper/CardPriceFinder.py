@@ -1,4 +1,4 @@
-from YGOTools import BigwebPriceFinder, CardSearcher
+from YGOTools import BigwebPriceFinder, CardSearcher, CardInfo
 from discord import Embed, Color
 from .CardPaginator import CardPaginator
 
@@ -33,7 +33,7 @@ class CardPriceFinder:
 		return embed
 	
 	
-	def createEmbeds(self, title: str, cardPriceList: list[], imageUrl: str = None) -> list[Embed]:
+	def createEmbeds(self, title: str, cardPriceList: list[CardInfo], imageUrl: str = None) -> list[Embed]:
 		embeds = []
 		embed = self.createBaseEmbed(title=title, imageUrl=imageUrl)
 		
