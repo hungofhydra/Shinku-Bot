@@ -1,4 +1,4 @@
-from ./YGOTools import PriceFinder, CardSearcher, CardInfo
+from /YGOTools import PriceFinder, CardSearcher, CardInfo
 from discord import Embed, Color
 from .CardPaginator import CardPaginator
 
